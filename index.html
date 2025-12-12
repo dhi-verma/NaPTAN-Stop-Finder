@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaPTAN Bus Stop Finder - DfT Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚏 NaPTAN Bus Stop Finder & Distance Calculator</h1>
+            <p>Official DfT tool for finding bus stops and calculating distances</p>
+        </header>
+
+        <div class="main-content">
+            <!-- LEFT PANEL: Stop Finder -->
+            <div class="panel">
+                <h2>Bus Stop Finder</h2>
+                <div class="input-group">
+                    <label for="stopSearch">Search for a bus stop:</label>
+                    <input 
+                        type="text" 
+                        id="stopSearch" 
+                        placeholder="e.g., Oxford Circus, SW1A 1AA"
+                        autocomplete="off"
+                    >
+                    <button id="searchBtn" class="btn btn-primary">
+                        <span id="searchBtnText">Search 🔍</span>
+                        <span id="searchSpinner" class="spinner" style="display: none;">Searching...</span>
+                    </button>
+                </div>
+
+                <div id="searchResults" class="results-box">
+                    <p class="placeholder-text">Enter a location or stop name to search</p>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL: Distance Calculator -->
+            <div class="panel">
+                <h2>Distance Calculator</h2>
+                <div class="input-group">
+                    <label for="fromStop">From Stop (ATCO Code or Name):</label>
+                    <input 
+                        type="text" 
+                        id="fromStop" 
+                        placeholder="e.g., 490000073G"
+                        readonly
+                    >
+                    
+                    <label for="toStop">To Stop (ATCO Code or Name):</label>
+                    <input 
+                        type="text" 
+                        id="toStop" 
+                        placeholder="Search a stop first, then 'Use This Stop'"
+                    >
+                    
+                    <button id="calculateBtn" class="btn btn-primary">
+                        Calculate Distance 📏
+                    </button>
+                </div>
+
+                <div id="distanceResults" class="results-box">
+                    <p class="placeholder-text">Select two stops to calculate distance</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Data source: NaPTAN API (Department for Transport) | Updated daily</p>
+            <p>Built by DfT Data Engineering Apprentice</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
